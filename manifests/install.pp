@@ -1,10 +1,7 @@
 # @summary A short summary of the purpose of this class
 # Installs the base Apache package
-class apache::install (
-  $install_name   = $apache::params::install_name,
-  $install_ensure = $apache::params::ensure,
-) inherits apache::params {
-  package { "${install_name}":
-    ensure => $install_ensure,
+class apache::install {
+  package { "${apache::install_name}":
+    ensure => $apache::install_ensure,
   }
 }
