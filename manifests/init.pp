@@ -12,6 +12,9 @@ class apache (
   Enum["running", "stopped"] $service_ensure,
   String $service_name,
   Boolean $service_enable,
+  String $vhosts_dir,
+  String $vhosts_owner,
+  String $vhosts_group,
 ) {
   contain apache::install #use contain instead of include, since include does not use order
   contain apache::config
